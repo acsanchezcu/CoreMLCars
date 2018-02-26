@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		080638AE2044183E009044B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080638AD2044183E009044B6 /* AppDelegate.swift */; };
-		080638B02044183E009044B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080638AF2044183E009044B6 /* ViewController.swift */; };
 		080638B32044183E009044B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 080638B12044183E009044B6 /* Main.storyboard */; };
 		080638B52044183E009044B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 080638B42044183E009044B6 /* Assets.xcassets */; };
 		080638B82044183E009044B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 080638B62044183E009044B6 /* LaunchScreen.storyboard */; };
+		080638C320441902009044B6 /* CoreMLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080638C220441902009044B6 /* CoreMLViewController.swift */; };
+		080638C620441B53009044B6 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080638C520441B53009044B6 /* CameraView.swift */; };
+		080638CE20442746009044B6 /* CoreMLHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080638CD20442746009044B6 /* CoreMLHelpers.swift */; };
+		080638D120442997009044B6 /* CoreMLApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080638D020442997009044B6 /* CoreMLApi.swift */; };
+		080638D320442EB3009044B6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080638D220442EB3009044B6 /* Extensions.swift */; };
+		080638D7204463FB009044B6 /* CarRecognition.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 080638D6204463FB009044B6 /* CarRecognition.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		080638AA2044183E009044B6 /* CoreMLCars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreMLCars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		080638AD2044183E009044B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		080638AF2044183E009044B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		080638B22044183E009044B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		080638B42044183E009044B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		080638B72044183E009044B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		080638B92044183E009044B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		080638C220441902009044B6 /* CoreMLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLViewController.swift; sourceTree = "<group>"; };
+		080638C520441B53009044B6 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		080638CD20442746009044B6 /* CoreMLHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLHelpers.swift; sourceTree = "<group>"; };
+		080638D020442997009044B6 /* CoreMLApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLApi.swift; sourceTree = "<group>"; };
+		080638D220442EB3009044B6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		080638D6204463FB009044B6 /* CarRecognition.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CarRecognition.mlmodel; path = Resources/CarRecognition.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,51 @@
 		080638AC2044183E009044B6 /* CoreMLCars */ = {
 			isa = PBXGroup;
 			children = (
+				080638D6204463FB009044B6 /* CarRecognition.mlmodel */,
+				080638CF2044297B009044B6 /* APIs */,
+				080638CC2044273E009044B6 /* Utils */,
+				080638C420441B3F009044B6 /* Views */,
+				080638BF204418D9009044B6 /* Controllers */,
 				080638AD2044183E009044B6 /* AppDelegate.swift */,
-				080638AF2044183E009044B6 /* ViewController.swift */,
 				080638B12044183E009044B6 /* Main.storyboard */,
 				080638B42044183E009044B6 /* Assets.xcassets */,
 				080638B62044183E009044B6 /* LaunchScreen.storyboard */,
 				080638B92044183E009044B6 /* Info.plist */,
 			);
 			path = CoreMLCars;
+			sourceTree = "<group>";
+		};
+		080638BF204418D9009044B6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				080638C220441902009044B6 /* CoreMLViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		080638C420441B3F009044B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				080638C520441B53009044B6 /* CameraView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		080638CC2044273E009044B6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				080638CD20442746009044B6 /* CoreMLHelpers.swift */,
+				080638D220442EB3009044B6 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		080638CF2044297B009044B6 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				080638D020442997009044B6 /* CoreMLApi.swift */,
+			);
+			path = APIs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +183,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				080638B02044183E009044B6 /* ViewController.swift in Sources */,
+				080638C320441902009044B6 /* CoreMLViewController.swift in Sources */,
+				080638D7204463FB009044B6 /* CarRecognition.mlmodel in Sources */,
+				080638C620441B53009044B6 /* CameraView.swift in Sources */,
+				080638D320442EB3009044B6 /* Extensions.swift in Sources */,
+				080638D120442997009044B6 /* CoreMLApi.swift in Sources */,
 				080638AE2044183E009044B6 /* AppDelegate.swift in Sources */,
+				080638CE20442746009044B6 /* CoreMLHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +333,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.acsanchezcu.CoreMLCars;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -296,7 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.acsanchezcu.CoreMLCars;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
